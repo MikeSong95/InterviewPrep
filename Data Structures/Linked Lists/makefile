@@ -1,16 +1,19 @@
 CC = gcc
-CFLAGS = -Wall
-DEPS = linked_list.h
-OBJ = linked_list.o reverse_linked_list.o
+CFLAGS = -Wall -Wextra -g
+DEPS = linked_list.c
+
 SRCS = $(wildcard *.c)
 PROGS = $(patsubst %.c,%,$(SRCS))
 
-%.o: %.c $(DEPS)
-		$(CC) $(CFLAGS) -c -o $@ $<
+all: reverse_linked_list remove_kth_node_from_end
 
-reverse_linked_list: $(OBJ)
-		gcc $(CFLAGS) -o $@ $^
-		rm *.o
+reverse_linked_list: reverse_linked_list.o
+		gcc $(CFLAGS) -g $@.c $(DEPS) -o $@ 
+		rm -f *.o
+		
+remove_kth_node_from_end: remove_kth_node_from_end.o
+		gcc $(CFLAGS) -g $@.c $(DEPS) -o $@ 
+		rm -f *.o
 
 clean: 
 		rm -f $(PROGS)
