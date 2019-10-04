@@ -1,8 +1,4 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
 #include "./header_files/linked_list.h"
 
 void reverse_linked_list(Node **head, Node *prev, Node *curr)
@@ -23,11 +19,7 @@ void reverse_linked_list(Node **head, Node *prev, Node *curr)
 // Driver function
 int main (void)
 {
-    srand(time(0));
-
-    int num_vals = (rand() % 11) + 1;
-
-    Node *head = init_rand_linked_list(num_vals);
+    Node *head = init_rand_linked_list();
     Node *prev = head;  
 
     print_linked_list(head);

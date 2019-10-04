@@ -6,7 +6,7 @@ void remove_kth_node_from_end(Node **head, int k)
     if ((*head) == NULL) return;            // head is empty
     if ((*head)->next == NULL && k == 1) {  // one node in list
         free((*head));
-        head = NULL;
+        *head = NULL;
         return;
     } 
 
@@ -41,12 +41,9 @@ void remove_kth_node_from_end(Node **head, int k)
 // Driver function
 int main (void)
 {
-    srand(time(0));
 
-    int num_vals = (rand() % 11) + 1;  
-    int k = rand() % num_vals + 1;      // generate a valid value for k
-
-    Node *head = init_rand_linked_list(num_vals);
+    Node *head = init_rand_linked_list();
+    int k = rand() % num_nodes(head) + 1;      // generate a valid value for k
 
     print_linked_list(head);
     printf("k = %d\n",k);
