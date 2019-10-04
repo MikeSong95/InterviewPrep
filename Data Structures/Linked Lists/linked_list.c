@@ -1,8 +1,4 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
 #include "./header_files/linked_list.h"
 
 Node *init_rand_linked_list(int n)

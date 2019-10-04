@@ -1,4 +1,8 @@
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 /* definition of linked list node */
 typedef struct Node {
     int val;
