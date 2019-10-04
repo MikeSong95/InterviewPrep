@@ -1,11 +1,10 @@
 
 #include "./header_files/linked_list.h"
 
-Node *init_rand_linked_list(int n)
+Node *init_rand_linked_list()
 {
-    if (n <= 0) return NULL;
-
     srand(time(0)); // Use current time as seed for random generator 
+    int n = (rand() % 20) + 1;  
 
     Node *head = NULL;
 
@@ -53,4 +52,17 @@ void print_linked_list(Node *head)
     }
 
     printf("null\n");
+}
+
+int num_nodes(Node *head) 
+{
+    int count = 0;
+
+    while (head != NULL)
+    {
+        count++;
+        head = head->next;
+    }
+
+    return count;
 }
