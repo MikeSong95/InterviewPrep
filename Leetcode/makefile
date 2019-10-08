@@ -1,10 +1,10 @@
-SRCS = $(wildcard *.c)
+all:
+	+$(MAKE) -C Easy
+	+$(MAKE) -C Medium
+	+$(MAKE) -C Hard
 
-PROGS = $(patsubst %.c,%,$(SRCS))
-
-all: $(PROGS)
-
-%: %.c
-		$(CC) $(CFLAGS) -o $@ $<
 clean: 
-		rm -f $(PROGS)
+		+$(MAKE) -C Easy clean
+		+$(MAKE) -C Medium clean
+		+$(MAKE) -C Hard clean
+
