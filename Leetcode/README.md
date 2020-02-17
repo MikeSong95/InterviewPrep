@@ -9,3 +9,6 @@ C++ programs are taken directly from my submitted Leetcode solution.
 
 ## Usage
 Clone or download the repository and run ```make``` to compile the C programs. Each of those programs can then be run with the command ```./<program_name>```. Run ```make clean``` to remove the executables.
+
+## Leetcode Profile
+https://leetcode.com/the_mikesong/
